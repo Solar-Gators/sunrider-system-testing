@@ -1,0 +1,12 @@
+mach create
+
+machine LoadPlatformDescription @mystm.repl
+
+
+sysbus LoadELF @OpenTelemetry.elf
+
+emulation CreateUartPtyTerminal "term" "/tmp/uart" true
+
+connector Connect sysbus.usart2 term
+
+logLevel 1

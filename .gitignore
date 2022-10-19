@@ -1,0 +1,8 @@
+# Ignore robot files
+*.html
+*.xml
+logs/
+snapshots/
+
+# Ignore mac files
+.DS_Store

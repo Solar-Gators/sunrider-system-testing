@@ -1,0 +1,4 @@
+using "platforms/cpus/stm32f072.repl"
+
+flash2: Memory.MappedMemory @ sysbus 0x40022000
+    size: 0x1000
