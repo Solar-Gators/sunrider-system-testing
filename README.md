@@ -17,7 +17,7 @@ Renode is integrated [with the Robot Framework for testing](https://renode.readt
 To run the simulation manually run the following command:
 
 ```bash
-renode -e s mystm.repl
+renode -e s test.resc
 ```
 
 This will start Renode in a different window. [See their documentation](https://renode.readthedocs.io/en/latest/basic/machines.html) for how to interact with machines.
