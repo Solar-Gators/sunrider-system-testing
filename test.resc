@@ -2,11 +2,14 @@ mach create
 
 machine LoadPlatformDescription @mystm.repl
 
+logLevel -1 sysbus.can
+
+logLevel 3 sysbus.timer6
+logLevel 3 sysbus.spi2
+logLevel 3 sysbus.rcc
 
 sysbus LoadELF @OpenTelemetry.elf
 
-emulation CreateUartPtyTerminal "term" "/tmp/uart" true
+sysbus LogFunctionNames true "CANDriver::Send"
 
-connector Connect sysbus.usart2 term
-
-logLevel 1
+start

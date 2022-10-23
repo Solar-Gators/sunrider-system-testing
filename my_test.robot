@@ -8,7 +8,7 @@ Resource        ${RENODEKEYWORDS}
 Start Test
     Execute Command     logLevel 1
     Execute Command     mach add "telemetry"
-    Execute Command     machine LoadPlatformDescription @${CURDIR}/mystm.repl
+    Execute Command     machine LoadPlatformDescription @platforms/cpus/stm32f072.repl
     Execute Command     sysbus LoadELF @${CURDIR}/OpenTelemetry.elf
     Start Emulation
 
@@ -22,4 +22,4 @@ Check For Telemetry Messages
     Execute Command   emulation CreateUartPtyTerminal "term" "/tmp/uart" true
     Execute Command   connector Connect sysbus.usart2 term
     ${result}=  Run Process  python3  ${CURDIR}/telemetry_check.py
-     Should Contain   ${result.stdout}    All can messages received2
+     Should Contain   ${result.stdout}    All can messages received
